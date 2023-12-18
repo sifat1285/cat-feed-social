@@ -105,4 +105,4 @@ function PostVoteShell() {
   )
 }
 
-export default SubRedditPostPage
+export default SubRedditPostPage;

@@ -150,9 +150,10 @@ export const Editor: React.FC<EditorProps> = ({ subredditId }) => {
     const init = async () => {
       await initializeEditor()
 
-      setTimeout(() => {
-        _titleRef?.current?.focus()
-      }, 0)
+      // setTimeout(() => {
+      //   _titleRef?.current?.focus()
+      // }, 0)
+      _titleRef?.current?.focus()
     }
 
     if (isMounted) {
