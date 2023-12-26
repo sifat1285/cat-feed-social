@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils'
 import { ChevronLeft } from 'lucide-react'
 import Link from 'next/link'
 import { FC } from 'react'
+import { Suspense } from 'react';
 
 const page: FC = () => {
   return (
@@ -18,8 +19,15 @@ const page: FC = () => {
           <ChevronLeft className='mr-2 h-4 w-4' />
           Home
         </Link>
-
-        <SignIn />
+        <Suspense 
+          fallback={
+            <div className=' flex items-center justify-center'>
+              It is taking a bit time to load please wait...
+            </div>
+          }
+        >
+          <SignIn />
+        </Suspense>
       </div>
     </div>
   )

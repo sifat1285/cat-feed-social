@@ -3,7 +3,7 @@ import { buttonVariants } from '@/components/ui/Button'
 import { cn } from '@/lib/utils'
 import { ChevronLeft } from 'lucide-react'
 import Link from 'next/link'
-import { FC } from 'react'
+import { FC, Suspense } from 'react'
 
 interface pageProps {}
 
@@ -21,7 +21,15 @@ const page: FC<pageProps> = ({}) => {
           Home
         </Link>
 
-        <SignUp />
+        <Suspense
+          fallback={
+            <div className=' flex items-center justify-center'>
+              It is taking a bit time to load please wait...
+            </div>
+          }
+        >
+          <SignUp />
+        </Suspense>
       </div>
     </div>
   )

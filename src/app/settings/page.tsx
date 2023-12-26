@@ -2,6 +2,7 @@ import { redirect } from 'next/navigation'
 
 import { UserNameForm } from '@/components/UserNameForm'
 import { authOptions, getAuthSession } from '@/lib/auth'
+import { Suspense } from 'react';
 
 export const metadata = {
   title: 'Settings',
@@ -21,12 +22,20 @@ export default async function SettingsPage() {
         <h1 className='font-bold text-3xl md:text-4xl'>Settings</h1>
 
         <div className='grid gap-10'>
-          <UserNameForm
+        <Suspense 
+          fallback={
+            <div className=' flex items-center justify-center h-full'>
+              Please wait for a bit UserNameForm is yet to be loaded...
+            </div>
+          }
+        >
+        <UserNameForm
             user={{
               id: session.user.id,
               username: session.user.username || '',
             }}
           />
+        </Suspense>
         </div>
       </div>
     </div>
