@@ -4,13 +4,13 @@ import { Inter } from 'next/font/google'
 import Providers from '@/components/Providers'
 import { Toaster } from '@/components/ui/Toaster'
 
-import '@/styles/globals.css'
+import '@/styles/globals.css';
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Breadit',
-  description: 'A Reddit clone built with Next.js and TypeScript.',
+  title: 'Cat Feed Social',
+  description: 'A Cat feed social clone built with Next.js and TypeScript.',
 }
 
 export default function RootLayout({
